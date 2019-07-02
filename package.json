@@ -1,6 +1,6 @@
 {
   "name": "generator-react-antd-mobx-boilerplate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React+Antd+Mobx Boilerplate",
   "main": "index.js",
   "scripts": {
