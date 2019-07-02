@@ -1,0 +1,186 @@
+$w-12: 100%;
+$w-11: 91.666%;
+$w-10: 83.333%;
+$w-9: 75%;
+$w-8: 66.666%;
+$w-7: 58.333%;
+$w-6: 50%;
+$w-5: 41.666%;
+$w-4: 33.333%;
+$w-3: 25%;
+$w-2: 16.666%;
+$w-1: 8.333%;
+
+.xs-1,
+.xs-2,
+.xs-3,
+.xs-4,
+.xs-5,
+.xs-6,
+.xs-7,
+.xs-8,
+.xs-9,
+.xs-10,
+.xs-11,
+.xs-12 {
+  float: left;
+  min-height: 1px;
+}
+
+.xs-12 { width: $w-12 }
+.xs-11 { width: $w-11; }
+.xs-10 { width: $w-10; }
+.xs-9 { width: $w-9; }
+.xs-8 { width: $w-8; }
+.xs-7 { width: $w-7; }
+.xs-6 { width: $w-6; }
+.xs-5 { width: $w-5; }
+.xs-4 { width: $w-4; }
+.xs-3 { width: $w-3; }
+.xs-2 { width: $w-2; }
+.xs-1 { width: $w-1; }
+
+.xs-offset-12 { margin-left: $w-12 }
+.xs-offset-11 { margin-left: $w-11; }
+.xs-offset-10 { margin-left: $w-10; }
+.xs-offset-9 { margin-left: $w-9; }
+.xs-offset-8 { margin-left: $w-8; }
+.xs-offset-7 { margin-left: $w-7; }
+.xs-offset-6 { margin-left: $w-6; }
+.xs-offset-5 { margin-left: $w-5; }
+.xs-offset-4 { margin-left: $w-4; }
+.xs-offset-3 { margin-left: $w-3; }
+.xs-offset-2 { margin-left: $w-2; }
+.xs-offset-1 { margin-left: $w-1; }
+
+@media (min-width: 768px) {
+  .sm-1,
+  .sm-2,
+  .sm-3,
+  .sm-4,
+  .sm-5,
+  .sm-6,
+  .sm-7,
+  .sm-8,
+  .sm-9,
+  .sm-10,
+  .sm-11,
+  .sm-12 {
+    float: left;
+    min-height: 1px;
+  }
+
+  .sm-12 { width: $w-12; }
+  .sm-11 { width: $w-11; }
+  .sm-10 { width: $w-10; }
+  .sm-9 { width: $w-9; }
+  .sm-8 { width: $w-8; }
+  .sm-7 { width: $w-7; }
+  .sm-6 { width: $w-6; }
+  .sm-5 { width: $w-5; }
+  .sm-4 { width: $w-4; }
+  .sm-3 { width: $w-3; }
+  .sm-2 { width: $w-2; }
+  .sm-1 { width: $w-1; }
+
+  .sm-offset-12 { margin-left: $w-12 }
+  .sm-offset-11 { margin-left: $w-11; }
+  .sm-offset-10 { margin-left: $w-10; }
+  .sm-offset-9 { margin-left: $w-9; }
+  .sm-offset-8 { margin-left: $w-8; }
+  .sm-offset-7 { margin-left: $w-7; }
+  .sm-offset-6 { margin-left: $w-6; }
+  .sm-offset-5 { margin-left: $w-5; }
+  .sm-offset-4 { margin-left: $w-4; }
+  .sm-offset-3 { margin-left: $w-3; }
+  .sm-offset-2 { margin-left: $w-2; }
+  .sm-offset-1 { margin-left: $w-1; }
+}
+
+@media (min-width: 1024px) {
+  .md-1,
+  .md-2,
+  .md-3,
+  .md-4,
+  .md-5,
+  .md-6,
+  .md-7,
+  .md-8,
+  .md-9,
+  .md-10,
+  .md-11,
+  .md-12 {
+    float: left;
+    min-height: 1px;
+  }
+
+  .md-12 { width: $w-12; }
+  .md-11 { width: $w-11; }
+  .md-10 { width: $w-10; }
+  .md-9 { width: $w-9; }
+  .md-8 { width: $w-8; }
+  .md-7 { width: $w-7; }
+  .md-6 { width: $w-6; }
+  .md-5 { width: $w-5; }
+  .md-4 { width: $w-4; }
+  .md-3 { width: $w-3; }
+  .md-2 { width: $w-2; }
+  .md-1 { width: $w-1; }
+
+  .md-offset-12 { margin-left: $w-12 }
+  .md-offset-11 { margin-left: $w-11; }
+  .md-offset-10 { margin-left: $w-10; }
+  .md-offset-9 { margin-left: $w-9; }
+  .md-offset-8 { margin-left: $w-8; }
+  .md-offset-7 { margin-left: $w-7; }
+  .md-offset-6 { margin-left: $w-6; }
+  .md-offset-5 { margin-left: $w-5; }
+  .md-offset-4 { margin-left: $w-4; }
+  .md-offset-3 { margin-left: $w-3; }
+  .md-offset-2 { margin-left: $w-2; }
+  .md-offset-1 { margin-left: $w-1; }
+}
+
+@media (min-width: 1280px) {
+  .lg-1,
+  .lg-2,
+  .lg-3,
+  .lg-4,
+  .lg-5,
+  .lg-6,
+  .lg-7,
+  .lg-8,
+  .lg-9,
+  .lg-10,
+  .lg-11,
+  .lg-12 {
+    float: left;
+    min-height: 1px;
+  }
+
+  .lg-12 { width: $w-12; }
+  .lg-11 { width: $w-11; }
+  .lg-10 { width: $w-10; }
+  .lg-9 { width: $w-9; }
+  .lg-8 { width: $w-8; }
+  .lg-7 { width: $w-7; }
+  .lg-6 { width: $w-6; }
+  .lg-5 { width: $w-5; }
+  .lg-4 { width: $w-4; }
+  .lg-3 { width: $w-3; }
+  .lg-2 { width: $w-2; }
+  .lg-1 { width: $w-1; }
+
+  .lg-offset-12 { margin-left: $w-12 }
+  .lg-offset-11 { margin-left: $w-11; }
+  .lg-offset-10 { margin-left: $w-10; }
+  .lg-offset-9 { margin-left: $w-9; }
+  .lg-offset-8 { margin-left: $w-8; }
+  .lg-offset-7 { margin-left: $w-7; }
+  .lg-offset-6 { margin-left: $w-6; }
+  .lg-offset-5 { margin-left: $w-5; }
+  .lg-offset-4 { margin-left: $w-4; }
+  .lg-offset-3 { margin-left: $w-3; }
+  .lg-offset-2 { margin-left: $w-2; }
+  .lg-offset-1 { margin-left: $w-1; }
+}

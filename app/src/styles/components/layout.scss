@@ -1,0 +1,58 @@
+// .basic-layout {
+//   .ant-layout {
+//     transition: all .2s;
+//     .fix-side-bar {
+//       box-shadow: 2px 0 8px 0 rgba(29, 25, 41, .05);
+//       @include position(fixed, 0, null, null, 0);
+//     }
+//     .fix-header {
+//       @include position(fixed, 0, 0);
+//       @include transition(width, .2s);
+//       &.ant-layout-header {
+//         width: calc(100% - 256px);
+//         padding: 0;
+//         z-index: 2;
+//       }
+//     }
+//     .layout-sider {
+//       z-index: 10;
+//       min-width: 100vh;
+//       box-shadow: 2px 0 8px 0 rgba(29, 25, 41, .05);
+//       @include position();
+//     }
+//     .layout-header {
+//       background: #fff;
+//       box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+//     }
+//     .layout-header-right {
+//       float: right;
+//       height: 100%;
+//       overflow: hidden;
+//       padding-right: 16px;
+//     }
+//     .layout-content {
+//       margin: 24px;
+//       padding-top: 64px;
+//     }
+//   }
+//   .trigger {
+//     cursor: pointer;
+//     padding: 0 24px;
+//     font-size: 20px;
+//     line-height: 64px;
+//     @include transition(color, .3s);
+//     &:hover {
+//       color: #1890ff;
+//     }
+//   }
+//   .logo {
+//     height: 64px;
+//     overflow: hidden;
+//     background: #001529;
+//     line-height: 64px;
+//     padding: 16px 24px 16px 0;
+//     @include bgSrc($logo-url, 32px, 32px);
+//     @include position(relative);
+//     @include transition(all, .3s);
+//   }
+// }

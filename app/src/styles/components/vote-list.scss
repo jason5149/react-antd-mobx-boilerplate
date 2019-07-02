@@ -1,0 +1,40 @@
+.vote-list-wrapper {
+  flex: 1;
+  width: 100%;
+  overflow: auto;
+  // @include size(100%, 100%);
+  .vote-list {
+    padding: px2rem(50);
+    @include size(100%, auto);
+    li {
+      width: 100%;
+      margin-bottom: px2rem(50);
+      @extend [layout];
+      @extend [layout='row'];
+      @extend [layout-align='space-between center'];
+      @include position();
+      .title {
+        font-size: px2rem(28);
+        font-weight: bold;
+        line-height: px2rem(70);
+      }
+      a {
+        color: #000;
+        @extend [layout];
+        @extend [layout='column'];
+        @extend [layout-align='center center'];
+        .awesome-icon {
+          margin-bottom: px2rem(10);
+          @include size(px2rem(40), px2rem(40));
+          @include bgSrc('../assets/img/awesome-icon.jpg');
+          &.active {
+            @include bgSrc('../assets/img/awesome-active-icon.jpg')
+          }
+        }
+        span {
+          font-size: px2rem(24);
+        }
+      }
+    }
+  }
+}

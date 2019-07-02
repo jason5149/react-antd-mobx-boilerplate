@@ -1,0 +1,92 @@
+// 弹性布局
+[layout] {
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  box-sizing: border-box;
+}
+
+[layout='column'] {
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+[layout='row'] {
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+}
+
+[layout-align='center'],
+[layout-align='center center'],
+[layout-align='center start'],
+[layout-align='center end'] {
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+[layout-align='end'],
+[layout-align='end center'],
+[layout-align='end start'],
+[layout-align='end end'] {
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+[layout-align='space-around'],
+[layout-align='space-around center'],
+[layout-align='space-around start'],
+[layout-align='space-around end'] {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+
+[layout-align='space-between'],
+[layout-align='space-between center'],
+[layout-align='space-between start'],
+[layout-align='space-between end'] {
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+[layout-align='center center'],
+[layout-align='start center'],
+[layout-align='end center'],
+[layout-align='space-between center'],
+[layout-align='space-around center'] {
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+}
+
+[layout-align='center start'],
+[layout-align='start start'],
+[layout-align='end start'],
+[layout-align='space-between start'],
+[layout-align='space-around start'] {
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+[layout-align='center end'],
+[layout-align='start end'],
+[layout-align='end end'],
+[layout-align='space-between end'],
+[layout-align='space-around end'] {
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+
+[layout-align='baseline'] {
+  align-items: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+}
