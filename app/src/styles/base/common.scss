@@ -98,8 +98,4 @@ body,
 /* container */
 
 /* other */
-.logo {
-  @include size(100%, px2rem(450));
-  @include bgSrc('../assets/img/logo.png');
-}
 /* other */

@@ -1,71 +1,71 @@
-const os = require('os');
-const webpack = require('webpack');
-const Happypack = require('happypack');
-const Webpackbar = require('webpackbar');
-const MinCssExtractPlugin = require('mini-css-extract-plugin');
+const os = require('os')
+const webpack = require('webpack')
+const Happypack = require('happypack')
+const Webpackbar = require('webpackbar')
+const MinCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
     vendor: ['react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react'],
-    bundle: './src/main.js'
+    bundle: './src/main.js',
   },
   output: {
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   module: {
     rules: [
       {
-        test: /\.js(x?)$/,
+        test:    /\.js(x?)$/,
         enforce: 'pre',
-        loader: 'source-map-loader'
+        loader:  'source-map-loader',
       },
       {
         test: /\.(jpe?p|png|gif|JPE?G|PNG|GIF)$/,
-        use: [
+        use:  [
           {
-            loader: 'url-loader',
+            loader:  'url-loader',
             options: {
-              limit: 8192
-            }
+              limit: 8192,
+            },
           },
           {
-            loader: 'file-loader',
+            loader:  'file-loader',
             options: {
-              name: 'img/[name].[ext]',
-              publicPath: '/'
-            }
-          }
-        ]
+              name:       'img/[name].[ext]',
+              publicPath: '/',
+            },
+          },
+        ],
       },
       {
         test: /\.(ttf|woff|eot|TTF|WOFF|EOT)$/,
-        use: [
+        use:  [
           {
-            loader: 'file-loader',
+            loader:  'file-loader',
             options: {
-              name: 'font/[name].[ext]',
-              publicPath: '/'
-            }
-          }
-        ]
-      }
-    ]
+              name:       'font/[name].[ext]',
+              publicPath: '/',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify('dev')
+      APP_ENV: JSON.stringify('dev'),
     }),
     new MinCssExtractPlugin({
-      filename: 'css/style.css',
-      chunkFilename: 'css/[id].css'
+      filename:      'css/style.css',
+      chunkFilename: 'css/[id].css',
     }),
     new Webpackbar(),
     new Happypack({
-      id: 'happy-babel-js',
-      loaders: ['babel-loader?cacheDirectory=true'],
+      id:         'happy-babel-js',
+      loaders:    ['babel-loader?cacheDirectory=true'],
       threadPool: Happypack.ThreadPool({
-        size: os.cpus().length
-      })
-    })
-  ]
-};
+        size: os.cpus().length,
+      }),
+    }),
+  ],
+}

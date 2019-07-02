@@ -1,115 +1,115 @@
-const webpack = require('webpack');
-const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const TerserPlugin = require('terser-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const config = require('../project.config');
+const config = require('../project.config')
 
-const mode = process.env.NODE_ENV;
-const env = process.env.APP_ENV;
-const { outputDir, publicPath, alias } = config;
+const mode = process.env.NODE_ENV
+const env = process.env.APP_ENV
+const { outputDir, publicPath, alias } = config
 
 const output = {
   path: outputDir,
-  publicPath
-};
+  publicPath,
+}
 
 const rules = [
   {
-    test: /\.(js|jsx)$/,
-    use: ['babel-loader', 'eslint-loader'],
+    test:    /\.(js|jsx)$/,
+    use:     ['babel-loader', 'eslint-loader'],
     include: [
       path.resolve('src'),
-      path.resolve('node_modules', 'react-utils-components')
-    ]
+      path.resolve('node_modules', 'react-utils-components'),
+    ],
   },
   {
     test: /\.(sa|sc|c)ss$/,
-    use: [
+    use:  [
       'style-loader',
       {
-        loader: MiniExtractPlugin.loader,
+        loader:  MiniExtractPlugin.loader,
         options: {
-          hmr: mode === 'development'
-        }
+          hmr: mode === 'development',
+        },
       },
       'css-loader',
       'postcss-loader',
-      'sass-loader'
-    ]
-  }
-];
+      'sass-loader',
+    ],
+  },
+]
 
 const resolve = {
   extensions: ['.js', '.jsx', '.json'],
-  alias
-};
+  alias,
+}
 
 const optimization = {
   runtimeChunk: 'single',
-  minimizer: [
+  minimizer:    [
     new TerserPlugin({
-      cache: true,
-      parallel: true,
+      cache:         true,
+      parallel:      true,
       terserOptions: {
-        ecma: 6,
+        ecma:   6,
         mangle: true,
         output: {
-          comments: false
-        }
+          comments: false,
+        },
       },
-      sourceMap: true
+      sourceMap: true,
     }),
     new OptimizeCssAssetsPlugin({
-      cssProcessor: require('cssnano'),
+      cssProcessor:        require('cssnano'),
       cssProcessorOptions: {
-        safe: true
-      }
-    })
+        safe: true,
+      },
+    }),
   ],
   splitChunks: {
     cacheGroups: {
       vendor: {
-        name: 'vendor',
-        test: /node_modules/,
-        chunks: 'initial',
+        name:     'vendor',
+        test:     /node_modules/,
+        chunks:   'initial',
         priority: 10,
-        enforce: true
+        enforce:  true,
       },
       common: {
-        name: 'common',
-        chunks: 'initial',
-        minChunks: 2,
+        name:               'common',
+        chunks:             'initial',
+        minChunks:          2,
         maxInitialRequests: 5,
-        minSize: 0
-      }
-    }
-  }
-};
+        minSize:            0,
+      },
+    },
+  },
+}
 
 const performance = {
-  hints: false
-};
+  hints: false,
+}
 
 const plugins = [
   new webpack.NamedChunksPlugin(),
   new HtmlWebpackPlugin({
-    filename: `${outputDir}/index.html`,
+    filename: `${ outputDir }/index.html`,
     template: path.resolve('public', 'index.ejs'),
-    env
-  })
-];
+    env,
+  }),
+]
 
 module.exports = {
   mode,
   output,
   module: {
-    rules
+    rules,
   },
   resolve,
   optimization,
   performance,
-  plugins
-};
+  plugins,
+}

@@ -1,76 +1,76 @@
-const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MinCssExtractPlugin = require('mini-css-extract-plugin');
-const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MinCssExtractPlugin = require('mini-css-extract-plugin')
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 
 module.exports = {
   entry: {
     vendor: ['react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react'],
-    bundle: './src/main.js'
+    bundle: './src/main.js',
   },
   output: {
-    filename: 'js/[name].[contenthash].js'
+    filename: 'js/[name].[contenthash].js',
   },
   module: {
     rules: [
       {
         test: /\.(jpe?p|png|gif|JPE?G|PNG|GIF)$/,
-        use: [
+        use:  [
           {
-            loader: 'url-loader',
+            loader:  'url-loader',
             options: {
-              limit: 8192
-            }
+              limit: 8192,
+            },
           },
           {
-            loader: 'file-loader',
+            loader:  'file-loader',
             options: {
-              name: 'img/[name].[ext]?[hash]',
-              publicPath: '/'
-            }
-          }
-        ]
+              name:       'img/[name].[ext]?[hash]',
+              publicPath: '/',
+            },
+          },
+        ],
       },
       {
         test: /\.(ttf|woff|eot|TTF|WOFF|EOT)$/,
-        use: [
+        use:  [
           {
-            loader: 'file-loader',
+            loader:  'file-loader',
             options: {
-              name: 'font/[name].[ext]?[hash]',
-              publicPath: '/'
-            }
-          }
-        ]
-      }
-    ]
+              name:       'font/[name].[ext]?[hash]',
+              publicPath: '/',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify('fat')
+      APP_ENV: JSON.stringify('fat'),
     }),
     new CleanWebpackPlugin({
-      verbose: true,
-      cleanOnceBeforceBuildPatterns: ['dist']
+      verbose:                       true,
+      cleanOnceBeforceBuildPatterns: ['dist'],
     }),
     new MinCssExtractPlugin({
-      filename: 'css/style.[contenthash].css',
-      chunkFilename: 'css/[id].[contenthash].css'
+      filename:      'css/style.[contenthash].css',
+      chunkFilename: 'css/[id].[contenthash].css',
     }),
     new ParallelUglifyPlugin({
       cacheDir: '.cache/',
       uglifyJS: {
         output: {
           beautify: true,
-          comments: true
+          comments: true,
         },
         compress: {
           // warnings: false,
-          drop_console: true,
+          drop_console:  true,
           collapse_vars: false,
-          reduce_vars: false
-        }
-      }
-    })
-  ]
-};
+          reduce_vars:   false,
+        },
+      },
+    }),
+  ],
+}

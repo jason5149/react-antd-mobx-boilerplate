@@ -1,6 +1,6 @@
 {
   "name": "generator-react-antd-mobx-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React+Antd+Mobx Boilerplate",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,16 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "yeoman-generator": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-compat": "^3.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2"
   }
 }

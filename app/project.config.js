@@ -28,9 +28,10 @@ if (process.env.APP_ENV !== 'dev') {
 }
 
 module.exports = {
-  outputDir:  config.assetsRoot,
-  publicPath: config.assetsPublicPath,
-  proxy:      {
+  outputDir:     config.assetsRoot,
+  publicPath:    config.assetsPublicPath,
+  devClientPort: 8080,
+  proxy:         {
     '/api': {
       target:       'http://47.111.84.218:10000',
       changeOrigin: true,
@@ -38,6 +39,12 @@ module.exports = {
         '^/api': '',
       },
     },
+  },
+  apiHost: {
+    dev: '',
+    fat: '',
+    uat: '',
+    pro: '',
   },
   alias: {
     '@':           path.resolve('src'),
