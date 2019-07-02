@@ -2,6 +2,7 @@ const os = require('os')
 const webpack = require('webpack')
 const Happypack = require('happypack')
 const Webpackbar = require('webpackbar')
+const TerserPlugin = require('terser-webpack-plugin')
 const MinCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -38,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(ttf|woff|eot|TTF|WOFF|EOT)$/,
+        test: /\.(ttf|oft|woff|eot|svg|TTF|OTF|WOFF|EOT|SVG)$/,
         use:  [
           {
             loader:  'file-loader',
@@ -49,6 +50,22 @@ module.exports = {
           },
         ],
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache:         true,
+        parallel:      true,
+        terserOptions: {
+          ecma:   6,
+          mangle: true,
+          output: {
+            comments: false,
+          },
+        },
+        sourceMap: true,
+      }),
     ],
   },
   plugins: [

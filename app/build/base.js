@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -50,18 +49,6 @@ const resolve = {
 const optimization = {
   runtimeChunk: 'single',
   minimizer:    [
-    new TerserPlugin({
-      cache:         true,
-      parallel:      true,
-      terserOptions: {
-        ecma:   6,
-        mangle: true,
-        output: {
-          comments: false,
-        },
-      },
-      sourceMap: true,
-    }),
     new OptimizeCssAssetsPlugin({
       cssProcessor:        require('cssnano'),
       cssProcessorOptions: {

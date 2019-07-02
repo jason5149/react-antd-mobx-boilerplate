@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MinCssExtractPlugin = require('mini-css-extract-plugin')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
@@ -32,7 +33,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(ttf|woff|eot|TTF|WOFF|EOT)$/,
+        test: /\.(ttf|oft|woff|eot|svg|TTF|OTF|WOFF|EOT|SVG)$/,
         use:  [
           {
             loader:  'file-loader',
@@ -43,6 +44,22 @@ module.exports = {
           },
         ],
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache:         true,
+        parallel:      true,
+        terserOptions: {
+          ecma:   6,
+          mangle: true,
+          output: {
+            comments: false,
+          },
+        },
+        sourceMap: false,
+      }),
     ],
   },
   plugins: [
