@@ -5,15 +5,18 @@ const ENV = process.env.APP_ENV || 'dev'
 const options = {
   pro: {
     assetsRoot:       path.resolve(__dirname, './dist/PRO', pkg.version),
-    assetsPublicPath: `https://m.hellobike.com/${ pkg.name }/PRO/${ pkg.version }/`,
+    // assetsPublicPath: `https://m.hellobike.com/${ pkg.name }/PRO/${ pkg.version }/`,
+    assetsPublicPath: '/',
   },
   uat: {
     assetsRoot:       path.resolve(__dirname, './dist/UAT', pkg.version),
-    assetsPublicPath: `https://m.hellobike.com/${ pkg.name }/UAT/${ pkg.version }/`,
+    // assetsPublicPath: `https://m.hellobike.com/${ pkg.name }/UAT/${ pkg.version }/`,
+    assetsPublicPath: '/',
   },
   fat: {
     assetsRoot:       path.resolve(__dirname, './dist/FAT', pkg.version),
-    assetsPublicPath: `https://m.hellobike.com/${ pkg.name }/FAT/${ pkg.version }/`,
+    // assetsPublicPath: `https://m.hellobike.com/${ pkg.name }/FAT/${ pkg.version }/`,
+    assetsPublicPath: '/',
   },
   dev: {
     assetsRoot:       path.resolve(__dirname, './dist/DEV', pkg.version),
